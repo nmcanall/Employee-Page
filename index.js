@@ -1,5 +1,8 @@
 const inquirer = require("inquirer");
 
+const generatePage = require("./src/page.js");
+const writeFile = require("./utils/generate-site");
+
 const promptManager = () => {
     const manager = {};
     manager.employeeType = "manager";
@@ -258,5 +261,14 @@ promptManager()
         return promptMenu(teamData);
     })
     .then(completeData => {
-        console.log(completeData);
-    });
+        return generatePage(completeData);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
+    })
+    .catch(err => {
+        console.log(err);
+    })
