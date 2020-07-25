@@ -3,7 +3,7 @@ const Employee = require("../lib/Employee");
 test("creates an employee object", () => {
     const name = "John";
     const id = 1234;
-    const email = "john@work.com"
+    const email = "john@work.com";
     const employee = new Employee(name, id, email);
 
     expect(employee.name).toBe(name);
@@ -14,7 +14,7 @@ test("creates an employee object", () => {
 test("tests if print functions are valid", () => {
     const name = "John";
     const id = 1234;
-    const email = "john@work.com"
+    const email = "john@work.com";
     const employee = new Employee(name, id, email);
 
     expect(employee.printID()).toEqual(expect.stringContaining(id + ""));
