@@ -1,0 +1,36 @@
+{
+  "name": "employee-page",
+  "version": "1.0.0",
+  "description": "Builds HTML page from command line input to show a team's manager, engineers, and interns.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmcanall/Employee-Page.git"
+  },
+  "keywords": [
+    "oop",
+    "tdd",
+    "jest",
+    "node",
+    "html",
+    "javascript",
+    "js",
+    "bootstrap"
+  ],
+  "author": "Nathan McAnally",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmcanall/Employee-Page/issues"
+  },
+  "homepage": "https://github.com/nmcanall/Employee-Page#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "jest": "^26.1.0"
+  }
+}
