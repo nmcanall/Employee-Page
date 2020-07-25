@@ -261,7 +261,7 @@ promptManager()
         return promptMenu(teamData);
     })
     .then(completeData => {
-        console.log(completeData);
+        // console.log(completeData);
         return generatePage(completeData);
     })
     .then(pageHTML => {

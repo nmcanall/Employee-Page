@@ -1,4 +1,87 @@
+const Manager = require("../lib/Manager");
+const Engineer = require("../lib/Engineer");
+const Intern = require("../lib/Intern");
+
+const manager = [];
+const engineers = [];
+const interns = [];
+
+const buildObjects = data => {
+    for(let i = 0; i < data.length; i++) {
+        const {employeeType, details} = data[i];
+        if(employeeType === "manager") {
+            manager.push(new Manager(details.name, details.id, details.email, details.office));
+        }
+        else if(employeeType === "engineer") {
+            engineers.push(new Engineer(details.name, details.id, details.email, details.github));
+        }
+        else {
+            interns.push(new Intern(details.name, details.id, details.email, details.school));
+        }
+    }
+}
+
+const buildManagerCard = () => {
+    return `
+            <div class="card shadow m-4" style="width: 18rem;">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="card-title">${manager[0].name}</h2>
+                    <h4 class="card-subtitle">Manager</h3>
+                </div>
+                <div class="card-body bg-light">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">${manager[0].printID()}</li>
+                        <li class="list-group-item">${manager[0].printEmail()}</li>
+                        <li class="list-group-item">${manager[0].printOffice()}</li>
+                    </ul>
+                </div>
+            </div>`
+}
+
+const buildEngineerCards = () => {
+    let html = ``;
+    for(let i = 0; i < engineers.length; i++) {
+        html += `
+            <div class="card shadow m-4" style="width: 18rem;">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="card-title">${engineers[i].name}</h2>
+                    <h4 class="card-subtitle">Engineer</h3>
+                </div>
+                <div class="card-body bg-light">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">${engineers[i].printID()}</li>
+                        <li class="list-group-item">${engineers[i].printEmail()}</li>
+                        <li class="list-group-item">${engineers[i].printGithub()}</li>
+                    </ul>
+                </div>
+            </div>`
+    }
+    return html;
+}
+
+const buildInternCards = () => {
+    let html = ``;
+    for(let i = 0; i < interns.length; i++) {
+        html += `
+            <div class="card shadow m-4" style="width: 18rem;">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="card-title">${interns[i].name}</h2>
+                    <h4 class="card-subtitle">Intern</h3>
+                </div>
+                <div class="card-body bg-light">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">${interns[i].printID()}</li>
+                        <li class="list-group-item">${interns[i].printEmail()}</li>
+                        <li class="list-group-item">${interns[i].printSchool()}</li>
+                    </ul>
+                </div>
+            </div>`
+    }
+    return html;
+}
+
 const generatePage = data => {
+    buildObjects(data);
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -14,45 +97,9 @@ const generatePage = data => {
             <h1>My Team</h1>
         </header>
         <main class="p-5 d-flex justify-content-center flex-wrap">
-            <div class="card shadow m-4" style="width: 18rem;">
-                <div class="card-header bg-primary text-white">
-                    <h2 class="card-title">Jared</h2>
-                    <h4 class="card-subtitle">Manager</h3>
-                </div>
-                <div class="card-body bg-light">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ID: 123456789</li>
-                        <li class="list-group-item">Email: <a href="mailto:jared@work.com">jared@work.com</a></li>
-                        <li class="list-group-item">Office Number: 101</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card shadow m-4" style="width: 18rem;">
-                <div class="card-header bg-primary text-white">
-                    <h2 class="card-title">Susan</h2>
-                    <h4 class="card-subtitle">Engineer</h3>
-                </div>
-                <div class="card-body bg-light">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ID: 123456789</li>
-                        <li class="list-group-item">Email: <a href="mailto:jared@work.com">susan@work.com</a></li>
-                        <li class="list-group-item">GitHub: <a href="https://github.com/gitsusan">GitSusan</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card shadow m-4" style="width: 18rem;">
-                <div class="card-header bg-primary text-white">
-                    <h2 class="card-title">John</h2>
-                    <h4 class="card-subtitle">Intern</h3>
-                </div>
-                <div class="card-body bg-light">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ID: 123456789</li>
-                        <li class="list-group-item">Email: <a href="mailto:jared@work.com">john@work.com</a></li>
-                        <li class="list-group-item">School: The Citadel</li>
-                    </ul>
-                </div>
-            </div>
+            ${buildManagerCard()}
+            ${buildEngineerCards()}
+            ${buildInternCards()}
         </main>
     </body>
 </html>`
