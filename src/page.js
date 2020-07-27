@@ -26,7 +26,7 @@ const buildManagerCard = () => {
             <div class="card shadow m-4" style="width: 18rem;">
                 <div class="card-header bg-primary text-white">
                     <h2 class="card-title">${manager[0].name}</h2>
-                    <h4 class="card-subtitle">Manager</h3>
+                    <h4 class="card-subtitle">☕ Manager</h3>
                 </div>
                 <div class="card-body bg-light">
                     <ul class="list-group list-group-flush">
@@ -45,7 +45,7 @@ const buildEngineerCards = () => {
             <div class="card shadow m-4" style="width: 18rem;">
                 <div class="card-header bg-primary text-white">
                     <h2 class="card-title">${engineers[i].name}</h2>
-                    <h4 class="card-subtitle">Engineer</h3>
+                    <h4 class="card-subtitle">👓 Engineer</h3>
                 </div>
                 <div class="card-body bg-light">
                     <ul class="list-group list-group-flush">
@@ -66,7 +66,7 @@ const buildInternCards = () => {
             <div class="card shadow m-4" style="width: 18rem;">
                 <div class="card-header bg-primary text-white">
                     <h2 class="card-title">${interns[i].name}</h2>
-                    <h4 class="card-subtitle">Intern</h3>
+                    <h4 class="card-subtitle">🎓 Intern</h3>
                 </div>
                 <div class="card-body bg-light">
                     <ul class="list-group list-group-flush">
