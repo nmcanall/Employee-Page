@@ -48,7 +48,7 @@ const promptManager = () => {
                     return true;
                 }
                 else {
-                    console.log("Please enter a valid email!");
+                    console.log(" Please enter a valid email!");
                     return false;
                 }
             }
@@ -125,7 +125,7 @@ Add a New Engineer
                     return true;
                 }
                 else {
-                    console.log("Please enter a valid email!");
+                    console.log(" Please enter a valid email!");
                     return false;
                 }
             }
@@ -203,7 +203,7 @@ Add a New Intern
                     return true;
                 }
                 else {
-                    console.log("Please enter a valid email!");
+                    console.log(" Please enter a valid email!");
                     return false;
                 }
             }
@@ -268,7 +268,7 @@ promptManager()
         return writeFile(pageHTML);
     })
     .then(writeFileResponse => {
-        console.log(writeFileResponse);
+        console.log(writeFileResponse.message);
     })
     .catch(err => {
         console.log(err);

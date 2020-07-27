@@ -26,7 +26,7 @@ To install necessary dependencies, run the following command: `npm install`
 
 ## Usage
 
-Open the project, install dependencies, input employee information, then view the HTML produced in the "dist" folder.
+Open the project, install dependencies, input employee information, then view the HTML produced in the "dist" folder. Use `node index` to run the program.
 
 ## License
 
@@ -42,4 +42,4 @@ To run tests, run the following command: `npm run test`
 
 ## Questions
 
-If you have questions, visit my [GitHub](https://github.com/nmcanall/Employee Page) or contact me directly at <nmcanall@citadel.edu>.
+If you have questions, visit my [GitHub](https://github.com/nmcanall/Employee-Page) or contact me directly at <nmcanall@citadel.edu>.

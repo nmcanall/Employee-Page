@@ -10,7 +10,7 @@ const writeFile = fileContent => {
 
             resolve({
                 ok: true,
-                message: "File created!"
+                message: "File created! Check the 'dist' folder for the HTML file."
             });
         });
     });
